@@ -34,10 +34,23 @@
     }
     a.button:active { background: #e06a00; }
     .small { font-size: 0.85rem; opacity: 0.75; margin-top: 24px; }
+    .logo {
+      display: block;
+      width: 180px;
+      max-width: 70%;
+      height: auto;
+      margin: 0 auto 28px;
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
   <main>
+    <!-- Logo file lives next to this page. If it is missing, the image hides itself. -->
+    <img class="logo" src="justgiving-logo.svg" alt="JustGiving" onerror="this.style.display='none'">
     <h1>Taking you to our Cancer Research fundraiser...</h1>
     <p>Thank you for supporting our Halloween display.</p>
     <a id="continue" class="button" href="#">Continue to JustGiving</a>

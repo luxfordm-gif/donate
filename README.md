@@ -35,10 +35,25 @@ That is the only change needed each year.
 - If the URL placeholder has not been replaced yet, the page shows a
   "not set up yet" message instead of redirecting somewhere broken.
 
-## One-time GitHub Pages setup
+## JustGiving logo
 
-1. In this repository go to **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to *Deploy from a branch*.
-3. Choose the `main` branch and the `/ (root)` folder, then **Save**.
-4. The site will be published at `https://<your-username>.github.io/donate/`.
-   Use that address when generating the QR code.
+The page shows a JustGiving logo above the message if a file named
+`justgiving-logo.svg` (or swap the extension in `index.html` for `.png`)
+sits next to `index.html`. Download the official logo from JustGiving's
+brand resources, save it under that name, and commit it. If the file is
+missing the page simply hides the logo, so nothing breaks.
+
+## GitHub Pages hosting
+
+Publishing is automatic. The workflow in `.github/workflows/pages.yml`
+runs on every push to `main`, switches GitHub Pages on the first time, and
+deploys the site to:
+
+    https://luxfordm-gif.github.io/donate/
+
+Use that address when generating the QR code. You can watch deployments
+under the repository's **Actions** tab.
+
+Note: GitHub only publishes Pages from a **public** repository on the free
+plan. If the repository is private, make it public under
+**Settings → General → Danger zone → Change visibility** first.
