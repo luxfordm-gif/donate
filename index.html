@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Halloween Display – Cancer Research Fundraiser</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #1a0b2e;
+      color: #fff;
+      text-align: center;
+      line-height: 1.5;
+    }
+    main { max-width: 420px; }
+    h1 { font-size: 1.4rem; margin: 0 0 12px; }
+    p { margin: 0 0 24px; font-size: 1.05rem; }
+    a.button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #ff7a00;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    a.button:active { background: #e06a00; }
+    .small { font-size: 0.85rem; opacity: 0.75; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Taking you to our Cancer Research fundraiser...</h1>
+    <p>Thank you for supporting our Halloween display.</p>
+    <a id="continue" class="button" href="#">Continue to JustGiving</a>
+    <p class="small">If nothing happens, tap the button above.</p>
+  </main>
+
+  <script>
+    // ==========================================================
+    //  UPDATE THIS ONE LINE EACH YEAR with the new JustGiving page
+    // ==========================================================
+    const JUSTGIVING_URL = "PASTE_CURRENT_JUSTGIVING_URL_HERE";
+    // ==========================================================
+
+    (function () {
+      var link = document.getElementById("continue");
+
+      // Safety check: don't redirect if the URL hasn't been filled in yet.
+      if (!JUSTGIVING_URL || JUSTGIVING_URL.indexOf("http") !== 0) {
+        document.querySelector("h1").textContent = "Fundraiser link not set up yet";
+        document.querySelector("p").textContent = "Please check back soon.";
+        link.style.display = "none";
+        return;
+      }
+
+      // Give the fallback button a real destination first.
+      link.href = JUSTGIVING_URL;
+
+      // Redirect immediately. replace() keeps this page out of the back button history.
+      window.location.replace(JUSTGIVING_URL);
+    })();
+  </script>
+</body>
+</html>
